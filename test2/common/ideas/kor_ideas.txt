@@ -1,0 +1,75 @@
+ideas = {
+    country ={
+        apec_trade = {
+            modifier = {
+                consumer_goods_factor = -0.05
+            }
+        }
+
+        federal_korea_bonus = {
+            modifier = {
+                consumer_goods_factor = -0.10
+                recruitable_population_factor = 0.03
+                industrial_capacity_factory = 0.10
+            }
+        }
+
+        guaranteed_independence ={
+            modifier = {
+                guarantee_cost = 0.0
+            }
+        }
+
+
+    #국민 정신
+        #무너진 경제
+        broken_economy = {
+            modifier = {
+                consumer_goods_factor = 0.5  # 소비재 공장 +50%
+                recruitable_population_factor = -0.02  # 징병 가능 인구 -2%
+                production_speed_buildings_factor = -0.3  # 건설 속도 -30%
+                production_factory_max_efficiency_factor = -0.5  # 공장 생산량 -50%
+                industrial_capacity_dockyard = -0.5  # 조선소 생산량 -50%
+            }
+        }
+        #부패한 정부
+        rotten_government = {
+            modifier = {
+                consumer_goods_factor = 0.05  # 소비재 공장 +5%
+                production_factory_max_efficiency_factor = -0.05  # 공장 생산량 -5%
+                industrial_capacity_dockyard = -0.05  # 조선소 생산량 -5%
+                #set_stability = -0.35  # 안정도 -35%
+                war_support_factor = -0.20  # 전쟁 지지율 -20%
+            }
+        }
+        #병역 이슈
+        ROKA_military_issues = {
+            modifier = {
+                army_infantry_attack_factor = -0.20  # 보병 공격력 -20%
+                army_infantry_defence_factor = -0.20  # 보병 방어력 -20%
+            }
+        }
+
+        #도라에몽
+        century_technology = {
+            modifier = {
+                research_speed_factor = 0.50  # 연구 속도 +50%
+            }
+        }
+
+        # 전시 경제
+        wartime_economy = {
+            modifier = {
+                consumer_goods_factor = -0.10  # 소비재 공장 -10%
+                production_factory_max_efficiency_factor = 0.03  # 공장 생산량 +3%
+            }
+        }
+
+        
+
+
+    }
+
+    
+    
+}

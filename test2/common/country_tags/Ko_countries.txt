@@ -1,0 +1,3 @@
+dynamic_tags = yes
+KOR = "countries/KOR.txt"
+NKR ="countries/NKR.txt"
