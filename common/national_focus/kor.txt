@@ -125,7 +125,7 @@ focus_tree = {
         
     }
 
-    #이승만의 나라
+    #이승만의 나라(이승만 전임 대통령 재선 투표, 부패한 정부 제거)
     focus = {
         id = world_is_mine
         x = 10
@@ -133,11 +133,7 @@ focus_tree = {
         cost = 5
         prerequisite = { focus = create_new_apec}
         completion_reward = { 
-            set_politics = {
-            ruling_party = conservatism
-            elections_allowed = yes
-            }
-
+            remove_ideas = rotten_government
         }
         
     }
@@ -149,7 +145,6 @@ focus_tree = {
         y = 8
         cost = 5
         prerequisite = { focus = world_is_mine}
-        
     }
 
     #연방
@@ -165,13 +160,88 @@ focus_tree = {
         }
         
     }
-        
+
+#유엔유엔
+    focus = {
+        id = Lets_go
+        x = 12
+        y= 6
+        #이거 단위가 7의 배수임 콜싸야 대충은 맞출게~
+        cost = 14
+        prerequisite = {focus = kor_election}
+        mutually_exclusive = {focus= kor_military_junta focus = all_hail_king}
+        completion_reward = {
+            create_faction = UN
+            FRA= {add_to_faction = KOR}
+        }
+    }
+
+    focus = {
+        id = come_on_eng
+        x = 12
+        y= 7
+        cost = 7
+        prerequisite = {focus = Lets_go}
+        completion_reward = {
+            ENG = {add_to_faction = KOR}
+        }
+    }
+
+    focus = {
+        id = come_on_usa
+        x = 12
+        y= 8
+        cost = 4
+        prerequisite = {focus = come_on_eng}
+        completion_reward = {
+            USA = {add_to_faction = KOR}
+        }
+    }
+
+    focus = {
+        id = come_on_chi
+        x = 12
+        y= 9
+        cost = 4
+        prerequisite = {focus = come_on_usa}
+        completion_reward = {
+            CHI = {add_to_faction = KOR}
+        }
+    }
+
+    focus = {
+        id = come_on_sov
+        x = 12
+        y= 10
+        cost = 4
+        prerequisite = {focus = come_on_chi}
+        completion_reward = {
+            SOV = {add_to_faction = KOR}
+        }
+    }
+
+    focus = {
+        id = freedom_freedom
+        x = 12
+        y= 11
+        cost = 21
+        prerequisite = {focus = come_on_sov}
+        completion_reward = {
+            FRA = {add_ideas = freedomfreedom}
+            USA = {add_ideas = freedomfreedom}
+            ENG = {add_ideas = freedomfreedom}
+            CHI = {add_ideas = freedomfreedom}
+            SOV = {add_ideas = freedomfreedom}
+            KOR = {add_ideas = freedomfreedom}
+        }
+    }
+
     
 
-#윤석열
+#윤석열(완)
     focus = {
         id =  KOR_Yun_focus
-        x = 13
+        x = 14
         y = 5
         cost = 5
         prerequisite = { focus = kor_election}
@@ -219,7 +289,7 @@ focus_tree = {
     #한미 군사 통행권
     focus = {
         id = Kor_military_access
-        x = 13
+        x = 14
         y = 6
         cost = 5
         prerequisite = {focus = KOR_Yun_focus}
@@ -234,7 +304,7 @@ focus_tree = {
     #상호방위조약 
     focus ={
         id = Kor_pact
-        x = 13
+        x = 14
         y = 7
         cost = 5
         prerequisite = {focus = Kor_military_access}
@@ -263,42 +333,187 @@ focus_tree = {
     #나치즘 척결
     focus = {
         id = Kor_I_hate_nazi
-        x = 13
+        x = 14
         y = 8
         cost = 5
         prerequisite = {focus = Kor_pact}
-        #이벤트에서 구현
         completion_reward = {
+            declare_war_on ={
+                target = GER 
+                type = annex_everything
+            }
+            
         }
+
     }
 
     #군국주의의 척결
     focus = {
         id = Kor_I_hate_japan
-        x = 13
+        x = 14
         y = 9
         cost = 5
         prerequisite = {focus = Kor_I_hate_nazi}
-        #이벤트에서 구현
         completion_reward = {
+            declare_war_on ={
+                target = JAP 
+                type = annex_everything
+            }
 
         }
     }
 
 #군부독재
+    #서울의 봄
     focus = {
         id =  kor_military_junta
-        x = 14
+        x = 16
         y = 5
         cost = 5
         prerequisite = { focus = kor_election}
         mutually_exclusive = { focus = KOR_Yun_focus focus= KOR_Lee_focus_FTA focus = all_hail_king}
+        completion_reward = {
+            #상의 좀
+        }
     }
+
+    #박정희의 후손
+    focus = {
+        id = recruit_her
+        x = 16
+        y = 6
+        cost = 5
+        prerequisite = { focus = kor_military_junta}
+        completion_reward = {
+            promote_character = park_geun_hye
+        }
+    }
+
+    #박근혜 총통
+    focus = {
+        id = wow
+        x = 16
+        y = 7
+        cost = 5
+        prerequisite = { focus = recruit_her}
+        completion_reward = {
+            set_politics = {
+                ruling_party = conservatism
+                elections_allowed = no
+            }
+        }
+    }
+
+    #비상계엄선포
+    focus = {
+        id = martial_law
+        x = 16
+        y = 8
+        cost = 5
+        prerequisite = { focus = wow}
+        completion_reward = {
+            add_ideas = martial_law_effect
+            remove_ideas = rotten_government
+        }
+    }
+
+    #비상계엄확대
+    focus = {
+        id = martial_law_go
+        x = 16
+        y = 9
+        cost = 2
+        prerequisite = { focus = martial_law}
+        completion_reward = {
+            add_ideas = martial_law_effect_large
+            remove_ideas = martial_law_effect
+        }
+    }
+
+    #공산주의 척결
+    focus = {
+        id = rooting_out
+        x = 16
+        y = 10
+        cost = 5
+        prerequisite = { focus = martial_law_go}
+        completion_reward = {
+            declare_war_on ={
+                target = SOV 
+                type = annex_everything
+            }
+        }
+    }
+
+    #방공협정 조인
+    focus = {
+        id = join_join
+        x = 16
+        y = 11
+        cost = 5
+        prerequisite = { focus = rooting_out}
+        completion_reward = {
+            ITA = {
+                add_opinion_modifier = {
+                    target = KOR
+                    modifier = large_increase
+                }
+            }
+            GER = {
+                add_opinion_modifier = {
+                    target = KOR
+                    modifier = large_increase
+                }
+            }
+            
+        }
+    }
+
+    #중일전쟁(이벤트)
+    focus = {
+        id = chi_jap
+        x = 16
+        y = 12
+        cost = 5
+        prerequisite = { focus = join_join}
+        completion_reward = {
+        }
+    }
+
+    #대한스러움
+    focus = {
+        id = like_korea
+        x = 16
+        y = 13
+        cost = 5
+        prerequisite = { focus = chi_jap}
+        available = {
+            owns_state = 523
+            owns_state = 202
+            owns_state = 203
+            owns_state = 204
+            owns_state = 205
+        }
+
+        completion_reward = {
+            every_owned_state = {
+                add_core_of = KOR
+            }
+            add_ideas = mania
+            remove_ideas = martial_law_effect_large
+            set_cosmetic_tag=MAN
+
+        }
+    }
+
+
+
+
 
 #왕정복고
     focus = {
         id =  all_hail_king
-        x = 15
+        x = 20
         y = 5
         cost = 5
         prerequisite = { focus = kor_election}

@@ -1,4 +1,4 @@
-reload countrycolors
+
 NKR = {
 	color = rgb{ 107 0 0}
 	color_ui = rgb{ 107 0 0}

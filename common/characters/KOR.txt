@@ -1,0 +1,80 @@
+characters = {
+    Lee_sung_man = {
+        country_leader = {
+            ideology = conservatism
+            traits = { charismatic }
+            desc = MY_NEW_LEADER_desc
+            expire = "1965.1.1"
+        }
+        name = "Syngman Rhee"
+        portraits = {
+			civilian = {
+				large = GFX_portrait_Syngman_Rhee
+			}	
+		}
+
+    }
+
+    yi_kang = {
+        country_leader = {
+            ideology = despotism
+            traits = { charismatic }
+            desc = MY_NEW_LEADER_desc
+            expire = "1965.1.1"
+        }
+        name = "Yi Kang"
+        portraits = {
+			civilian = {
+				large = GFX_portrait_Yi_Kang
+			}	
+		}
+
+    }
+
+    Kim_Il_sung = {
+        country_leader = {
+            ideology = stalinism
+            traits = { charismatic }
+            desc = MY_NEW_LEADER_desc
+            expire = "1965.1.1"
+        }
+        name = "Kim Il-sung"
+        portraits = {
+			civilian = {
+				large = GFX_portrait_Kim_Il_sung
+			}	
+		}
+
+    }
+
+    yi_yun = {
+        country_leader = {
+            ideology = fascism_ideology
+            traits = { charismatic }
+            desc = MY_NEW_LEADER_desc
+            expire = "1965.1.1"
+        }
+        name = "Yi Un"
+        portraits = {
+			civilian = {
+				large = GFX_portrait_Yi_Un
+			}	
+		}
+
+    }
+
+    park_geun_hye = {
+        country_leader = {
+            ideology = fascism
+            traits = { charismatic }
+            desc = MY_NEW_LEADER_desc
+            expire = "1965.1.1"
+        }
+        name = "Park Geun hye"
+        portraits = {
+			civilian = {
+				large = GFX_portrait_Yi_Un
+			}	
+		}
+    }
+}

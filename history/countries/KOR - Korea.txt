@@ -27,6 +27,7 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = yes
 }
+
 set_popularities = {
 	democratic = 35
 	fascism = 25
@@ -34,46 +35,9 @@ set_popularities = {
 	neutrality = 10
 }
 
-create_country_leader = {
-	name = "Syngman Rhee"
-	desc = ""
-	picture = GFX_portrait_Syngman_Rhee
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
+recruit_character = Lee_sung_man
+recruit_character = Kim_Il_sung
+recruit_character = yi_kang
+recruit_character = yi_yun
+recruit_character = park_geun_hye
 
-create_country_leader = {
-	name = "Yi Kang"
-	desc = ""
-	picture = GFX_portrait_Yi_Kang
-	expire = "1965.1.1"
-	ideology = despotism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Kim Il-sung"
-	desc = ""
-	picture = GFX_portrait_Kim_Il_sung
-	expire = "1965.1.1"
-	ideology = stalinism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Yi Un"
-	desc = ""
-	picture = GFX_portrait_Yi_Un
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
